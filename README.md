@@ -6,36 +6,6 @@ This is a fullstack blog application built using React, Next.js, Node.js, and Mo
 
 ## Project Structure
 
-my-blog-app/
-├── backend/
-│ ├── controllers/
-│ │ └── blogController.js
-│ ├── models/
-│ │ └── Blog.js
-│ ├── routes/
-│ │ └── blogRoutes.js
-│ ├── .env
-│ ├── app.js
-│ ├── package.json
-│ └── README.md
-├── frontend/
-│ ├── components/
-│ ├── pages/
-│ │ ├── api/
-│ │ │ └── hello.js
-│ │ ├── _app.js
-│ │ ├── index.js
-│ │ └── add-blog.js
-│ ├── public/
-│ ├── styles/
-│ │ └── globals.css
-│ ├── .babelrc
-│ ├── next.config.js
-│ ├── package.json
-│ └── README.md
-└── README.md
-
-
 ## Getting Started
 
 ### Prerequisites

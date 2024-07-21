@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function Home() {
   const [blogs, setBlogs] = useState([]);
@@ -26,6 +27,27 @@ export default function Home() {
     } catch (error) {
       console.error('Error deleting blog:', error);
     }
+  };
+
+  const confirmDelete = (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDelete(id);
+        Swal.fire(
+          'Deleted!',
+          'Your blog post has been deleted.',
+          'success'
+        );
+      }
+    });
   };
 
   const handleEdit = async (blog) => {
@@ -72,7 +94,7 @@ export default function Home() {
                     Edit
                   </button>
                   <button
-                    onClick={() => handleDelete(blog._id)}
+                    onClick={() => confirmDelete(blog._id)}
                     className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-700"
                   >
                     Delete
